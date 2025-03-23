@@ -4,6 +4,9 @@
  */
 package com.mycompany.attendancesystem;
 
+
+import java.awt.Image;
+import javax.imageio.ImageIO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -14,7 +17,7 @@ import javax.swing.JOptionPane;
  *
  * @author sharon
  */
-public class Register extends javax.swing.JFrame {
+public class Register1 extends javax.swing.JFrame {
 
     Connection conn = null;
     PreparedStatement pst = null;
@@ -22,7 +25,7 @@ public class Register extends javax.swing.JFrame {
     /**
      * Creates new form Register
      */
-    public Register() {
+    public Register1() {
         initComponents();
         s1.setBackground(new java.awt.Color(0, 0, 0, 1));
         s1.setOpaque(false);
@@ -103,6 +106,7 @@ public class Register extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        s17 = new javax.swing.JButton();
         lbl22 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -157,7 +161,7 @@ public class Register extends javax.swing.JFrame {
                 s2ActionPerformed(evt);
             }
         });
-        getContentPane().add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 210, 30));
+        getContentPane().add(s2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 130, 30));
 
         s1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
         s1.addActionListener(new java.awt.event.ActionListener() {
@@ -217,7 +221,7 @@ public class Register extends javax.swing.JFrame {
                 s6ActionPerformed(evt);
             }
         });
-        getContentPane().add(s6, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 210, 30));
+        getContentPane().add(s6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 210, 30));
 
         s15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
         s15.addActionListener(new java.awt.event.ActionListener() {
@@ -225,7 +229,7 @@ public class Register extends javax.swing.JFrame {
                 s15ActionPerformed(evt);
             }
         });
-        getContentPane().add(s15, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, 210, 30));
+        getContentPane().add(s15, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 320, 210, 30));
 
         jLabel11.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -248,7 +252,7 @@ public class Register extends javax.swing.JFrame {
                 s16ActionPerformed(evt);
             }
         });
-        getContentPane().add(s16, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 220, 130, 30));
+        getContentPane().add(s16, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, 210, 30));
 
         s11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
         getContentPane().add(s11, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, 210, 30));
@@ -318,6 +322,9 @@ public class Register extends javax.swing.JFrame {
         jLabel4.setText("Email:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, 20));
 
+        s17.setText("Attach");
+        getContentPane().add(s17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+
         lbl22.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         lbl22.setForeground(new java.awt.Color(255, 255, 255));
         lbl22.setIcon(new javax.swing.ImageIcon("C:\\Users\\sharon\\Downloads\\reggg.jpeg")); // NOI18N
@@ -354,7 +361,7 @@ public class Register extends javax.swing.JFrame {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-        String snumber, fname, mname, lname, uname, upass, address, email, bdate, sgs, occu, reg;
+        String snumber, fname, mname, lname, uname, upass, address, email, bdate, sgs, occu, reg, photos, cpass, pname;
         snumber = s1.getText();
         fname = s2.getText();
         mname = s3.getText();
@@ -369,10 +376,16 @@ public class Register extends javax.swing.JFrame {
         sgs = s12.getText();
         occu = s13.getText();
         reg = s14.getText();
+        cpass = String.valueOf(s15.getPassword());
+        pname = s16.getText();
+        photos = s17.getText();
+        
+        
+        
 
         try {
-            String sql = "INSERT INTO LOGIN (student_number, first_name, middle_name, last_name, user_name, password, address, email, contact_number, parent_contact_number, birth_date, student_section_grade, occupation, regular_irregular) "
-                    + "VALUES ('" + snumber + "','" + fname + "','" + mname + "', '" + lname + "', '" + uname + "',  '" + upass + "', '" + address + "', '" + email + "', '" + cnumber + "' , '" + pcnumber + "', '" + bdate + "' , '" + sgs + "' , '" + occu + "', '" + reg + "')";
+            String sql = "INSERT INTO LOGIN (student_number, first_name, middle_name, last_name, user_name, password, address, email, contact_number, parent_contact_number, birth_date, student_section_grade, occupation, regular_irregular, photo) "
+                    + "VALUES ('" + snumber + "','" + fname + "','" + mname + "', '" + lname + "', '" + uname + "',  '" + upass + "',  '" + cpass + "','" + address + "', '" + email + "', '" + cnumber + "' , '" + pcnumber + "', '" + pname + "', '" + bdate + "' , '" + sgs + "' , '" + occu + "', '" + reg + "', '" + photos + "')";
             pst = conn.prepareStatement(sql);
             s1.setText("");
             s2.setText("");
@@ -388,6 +401,7 @@ public class Register extends javax.swing.JFrame {
             s12.setText("");
             s13.setText("");
             s14.setText("");
+            
 
             int rowsAffected = pst.executeUpdate();
             if (rowsAffected > 0) {
@@ -497,6 +511,7 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField s14;
     private javax.swing.JPasswordField s15;
     private javax.swing.JTextField s16;
+    private javax.swing.JButton s17;
     private javax.swing.JTextField s2;
     private javax.swing.JTextField s3;
     private javax.swing.JTextField s4;

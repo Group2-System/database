@@ -63,6 +63,8 @@ public class Login extends javax.swing.JFrame {
         lbl2.setForeground(new java.awt.Color(0, 0, 0));
         lbl2.setText("Username");
         getContentPane().add(lbl2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, -1, -1));
+
+        a2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
         getContentPane().add(a2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 320, 290, 30));
 
         jButton3.setBackground(new java.awt.Color(51, 102, 255));
@@ -90,6 +92,8 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(RegisterBotton, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 430, 50, 20));
+
+        a1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 204, 255)));
         getContentPane().add(a1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 240, 290, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\sharon\\Downloads\\marilag (1).png")); // NOI18N
